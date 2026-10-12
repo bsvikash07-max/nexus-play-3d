@@ -1,0 +1,10 @@
+# Temporary download scripts
+download_assets.py
+
+# Windows thumbnail cache
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs
+*.log

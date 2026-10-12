@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXUS // PLAY — Next-Gen 3D PC Gaming Showcase</title>
+  <meta name="description" content="A visually stunning, immersive 3D PC gaming showcase website featuring legendary PC gaming masterpieces, real-time WebGL visuals, and editorial interactive galleries." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5' fill='%2300f0ff' stroke='%23ff0055' stroke-width='4'/%3E%3Ctext x='50' y='60' font-size='38' font-weight='bold' text-anchor='middle' fill='%2307090e' font-family='sans-serif'%3EN%3C/text%3E%3C/svg%3E" />
+
+  <!-- Google Fonts: Space Grotesk & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Film Grain Overlay -->
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <!-- Custom Interactive Cursor -->
+  <div class="custom-cursor-dot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" aria-hidden="true"></div>
+
+  <!-- WebGL Three.js Real-time 3D Canvas Background -->
+  <div id="webgl-canvas-container" aria-hidden="true"></div>
+
+  <!-- Ambient Cinematic Glows -->
+  <div class="ambient-glow glow-blue" style="top: 15%; left: -10%;"></div>
+  <div class="ambient-glow glow-red" style="top: 45%; right: -12%;"></div>
+  <div class="ambient-glow glow-purple" style="top: 75%; left: 10%;"></div>
+
+  <!-- 8. NAVIGATION BAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo" aria-label="NEXUS // PLAY Homepage">
+        <div class="logo-icon"></div>
+        <span>NEXUS <span class="logo-accent">//</span> <span class="logo-sub">PLAY</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero">HOME</a></li>
+          <li><a href="#featured">GAMES</a></li>
+          <li><a href="#gallery">GALLERY</a></li>
+          <li><a href="#spotlight">SPOTLIGHT</a></li>
+          <li><a href="#genres">GENRES</a></li>
+          <li><a href="#about">ABOUT</a></li>
+        </ul>
+      </nav>
+
+      <a href="#featured" class="nav-action-btn">
+        <span>ENTER SHOWCASE</span>
+        <i data-lucide="arrow-up-right" style="width:16px; height:16px;"></i>
+      </a>
+
+      <button class="mobile-menu-btn" id="mobileMenuOpen" aria-label="Open Navigation Menu">
+        <i data-lucide="menu" style="width:24px; height:24px;"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer">
+    <button class="mobile-close-btn" id="mobileMenuClose" aria-label="Close Navigation Menu">
+      <i data-lucide="x" style="width:28px; height:28px;"></i>
+    </button>
+    <a href="#hero" class="mobile-nav-link">HOME</a>
+    <a href="#featured" class="mobile-nav-link">GAMES</a>
+    <a href="#gallery" class="mobile-nav-link">GALLERY</a>
+    <a href="#spotlight" class="mobile-nav-link">SPOTLIGHT</a>
+    <a href="#genres" class="mobile-nav-link">GENRES</a>
+    <a href="#about" class="mobile-nav-link">ABOUT</a>
+    <a href="#featured" class="btn-primary mobile-nav-link" style="margin-top: 1.5rem; justify-content: center;">
+      ENTER SHOWCASE
+    </a>
+  </div>
+
+  <main>
+    <!-- 2. HERO SECTION — CINEMATIC LANDING EXPERIENCE -->
+    <section class="hero-section" id="hero">
+      <div class="hero-background-layer" aria-hidden="true"></div>
+      <div class="hero-overlay-gradient" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-platform-tag">
+          <i data-lucide="monitor" style="width:15px; height:15px; color:var(--neon-cyan);"></i>
+          <span>PLATFORM: <span class="pc-badge">PC MASTER SHOWCASE</span></span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="title-row">ENTER THE</span>
+          <span class="title-row glow-text">NEXT LEVEL.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Where legendary worlds meet next-generation immersion. Experience the bleeding edge of fidelity, real-time ray tracing, and ultra-high-definition interactive gaming artistry.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#featured" class="btn-primary">
+            <span>EXPLORE THE UNIVERSE</span>
+            <i data-lucide="sparkles" style="width:18px; height:18px;"></i>
+          </a>
+          <a href="#gallery" class="btn-secondary">
+            <span>DISCOVER THE GAMES</span>
+            <i data-lucide="gamepad-2" style="width:18px; height:18px;"></i>
+          </a>
+        </div>
+      </div>
+
+      <a href="#featured" class="hero-scroll-indicator" aria-label="Scroll Down to Featured Games">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span>SCROLL TO EXPLORE</span>
+      </a>
+    </section>
+
+    <!-- 3. FEATURED PC GAMES (EDITORIAL SHOWCASE) -->
+    <section id="featured">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">
+              <i data-lucide="cpu" style="width:14px; height:14px;"></i> CURATED EXHIBIT
+            </div>
+            <h2 class="section-title">FEATURED PC TITLES</h2>
+          </div>
+          <p class="section-desc">
+            An editorial collection of legendary PC games pushing the frontier of graphical power, open-world scale, and cinematic immersion.
+          </p>
+        </div>
+
+        <!-- Asymmetrical Editorial Grid -->
+        <div class="editorial-grid" id="featuredEditorialGrid">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. INTERACTIVE 3D GAME GALLERY -->
+    <section class="gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">
+              <i data-lucide="layers" style="width:14px; height:14px;"></i> DEPTH & MOTION
+            </div>
+            <h2 class="section-title">3D INTERACTIVE GALLERY</h2>
+          </div>
+          <p class="section-desc">
+            Every masterpiece exists in three dimensions. Hover to interact with layered parallax, real-time spatial tilt, and dynamic atmospheric illumination.
+          </p>
+        </div>
+
+        <!-- 3D Tilt Grid (10 Games) -->
+        <div class="tilt-gallery-grid" id="tiltGalleryGrid">
+          <!-- Populated dynamically via JS with 3D tilt attributes -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CINEMATIC SPOTLIGHT SECTION -->
+    <section class="spotlight-section" id="spotlight">
+      <div class="spotlight-bg-container" id="spotlightBgContainer" aria-hidden="true">
+        <!-- Spotlight background images injected dynamically -->
+      </div>
+      <div class="spotlight-overlay" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="spotlight-content-wrap">
+          <div class="spotlight-number" id="spotlightNumber">01 / 05</div>
+          <div class="spotlight-badge" id="spotlightBadge">FEATURED SPOTLIGHT</div>
+          <h2 class="spotlight-title" id="spotlightTitle">CYBERPUNK 2077</h2>
+          <p class="spotlight-desc" id="spotlightDesc">
+            Night City in full path-traced glory. Push PC hardware to the absolute edge with unlocked frame rates and revolutionary lighting realism.
+          </p>
+
+          <div class="spotlight-tags" id="spotlightTags">
+            <!-- Feature pills injected here -->
+          </div>
+
+          <div class="spotlight-actions">
+            <button class="btn-primary" id="spotlightExploreBtn">
+              <span>EXPLORE GAME</span>
+              <i data-lucide="arrow-right" style="width:18px; height:18px;"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Carousel Navigation Controls -->
+        <div class="spotlight-nav-controls">
+          <div class="spotlight-dots" id="spotlightDots"></div>
+          <button class="spotlight-nav-btn" id="spotlightPrevBtn" aria-label="Previous Spotlight Game">
+            <i data-lucide="chevron-left" style="width:24px; height:24px;"></i>
+          </button>
+          <button class="spotlight-nav-btn" id="spotlightNextBtn" aria-label="Next Spotlight Game">
+            <i data-lucide="chevron-right" style="width:24px; height:24px;"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. GAME GENRES — EXPLORE YOUR WORLD -->
+    <section class="genres-section" id="genres">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">
+              <i data-lucide="compass" style="width:14px; height:14px;"></i> SPECTRUM OF EXPERIENCES
+            </div>
+            <h2 class="section-title">EXPLORE BY GENRE</h2>
+          </div>
+          <p class="section-desc">
+            Filter through foundational PC gaming disciplines. Select a genre to discover tailored cinematic showcases.
+          </p>
+        </div>
+
+        <!-- Filter Pill Bar -->
+        <div class="genres-pill-bar" id="genresPillBar">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Filtered Gallery Grid -->
+        <div class="genres-grid" id="genresGalleryGrid">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. ABOUT THE SHOWCASE -->
+    <section class="about-section" id="about">
+      <div class="about-backdrop" aria-hidden="true"></div>
+      <div class="about-overlay" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <div class="section-tag">
+              <i data-lucide="terminal" style="width:14px; height:14px;"></i> MANIFESTO
+            </div>
+            <h2 class="section-title">GAMES ARE MORE THAN PIXELS.</h2>
+            <p class="section-desc" style="margin-bottom: 2rem;">
+              Discover extraordinary worlds, unforgettable stories, and the experiences that define modern PC gaming. This showcase is crafted to celebrate interactive art, next-generation rendering technologies, and the visionary developers who build the worlds we inhabit.
+            </p>
+            <p class="section-desc" style="font-size: 0.95rem; opacity: 0.8;">
+              Designed as a premium digital gallery celebrating PC hardware breakthroughs, real-time spatial web interaction, and cutting-edge frontend architecture.
+            </p>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat-card">
+              <div class="stat-number">10</div>
+              <div class="stat-label">Iconic PC Masterpieces</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">3D</div>
+              <div class="stat-label">WebGL Particle Field</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">08</div>
+              <div class="stat-label">Curated Gaming Genres</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">60+</div>
+              <div class="stat-label">FPS Smooth Motion</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. FINAL CALL-TO-ACTION -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <div class="section-tag" style="margin-bottom: 1.25rem;">
+            <i data-lucide="radio" style="width:14px; height:14px;"></i> THE JOURNEY CONTINUES
+          </div>
+          <h2 class="section-title" style="margin-bottom: 1rem;">YOUR NEXT ADVENTURE AWAITS.</h2>
+          <p class="section-desc" style="margin: 0 auto 2.5rem; text-align: center;">
+            Explore the worlds. Experience the impossible. Revisit the pinnacle of interactive entertainment.
+          </p>
+          <a href="#hero" class="btn-primary" style="display: inline-flex;">
+            <i data-lucide="arrow-up" style="width:18px; height:18px;"></i>
+            <span>BACK TO THE TOP</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#hero" class="brand-logo">
+          <div class="logo-icon"></div>
+          <span>NEXUS <span class="logo-accent">//</span> <span class="logo-sub">PLAY</span></span>
+        </a>
+
+        <ul class="footer-nav">
+          <li><a href="#hero">HOME</a></li>
+          <li><a href="#featured">GAMES</a></li>
+          <li><a href="#gallery">GALLERY</a></li>
+          <li><a href="#spotlight">SPOTLIGHT</a></li>
+          <li><a href="#genres">GENRES</a></li>
+          <li><a href="#about">ABOUT</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 NEXUS // PLAY. Premium PC Gaming Interactive Showcase.
+        </div>
+        <div class="footer-disclaimer">
+          DISCLAIMER: This website is an independent non-commercial showcase portfolio created solely for design and technical demonstration purposes. Game titles, artwork, and trademarks belong to their respective publishers and copyright holders (CD PROJEKT RED, Rockstar Games, FromSoftware, Game Science, id Software, Playground Games, Capcom, Santa Monica Studio).
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DEDICATED GAME DETAILS MODAL OVERLAY -->
+  <div class="modal-overlay" id="gameDetailModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+        <i data-lucide="x" style="width:20px; height:20px;"></i>
+      </button>
+      <div class="modal-hero-img">
+        <img id="modalImage" src="" alt="" />
+        <div class="modal-hero-overlay"></div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-badges">
+          <span class="badge-pc">
+            <i data-lucide="monitor" style="width:14px; height:14px; display:inline;"></i> PC PLATFORM
+          </span>
+          <span class="badge-genre" id="modalGenreBadge">GENRE</span>
+        </div>
+        <h2 class="modal-title" id="modalTitle">GAME TITLE</h2>
+        <p class="modal-tagline" id="modalTagline">Tagline goes here</p>
+        <p class="modal-desc" id="modalDescription">Detailed description goes here...</p>
+        
+        <h4 style="font-family: var(--font-mono); font-size: 0.82rem; letter-spacing: 0.15em; color: var(--neon-cyan); margin-bottom: 0.75rem; text-transform: uppercase;">
+          PC PERFORMANCE & GRAPHICAL HIGHLIGHTS
+        </h4>
+        <div class="modal-features-list" id="modalFeaturesList">
+          <!-- Dynamic features -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts: Local Vendor Libraries -->
+  <script src="js/three.min.js"></script>
+  <script src="js/gsap.min.js"></script>
+  <script src="js/ScrollTrigger.min.js"></script>
+  <script src="js/lucide.js"></script>
+
+  <!-- App Code -->
+  <script src="js/data.js"></script>
+  <script src="js/scene3d.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
